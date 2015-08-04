@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: yangbo
 # @Date:   2015-08-04 11:48:39
-# @Last Modified by:   yangbo
-# @Last Modified time: 2015-08-04 14:35:16
+# @Last Modified by:   Yang Bo
+# @Last Modified time: 2015-08-04 14:47:19
 
 import os
 import numpy
@@ -63,8 +63,7 @@ def action():
     for n, box in RECTS.items():
         if compare(img, n):
             print 'found %s' % n
-            if n is 'item':
-                isItem = True
+            isItem = n in ['item', 'continue']
             click(n)
             break
     if not isItem:
