@@ -3,7 +3,7 @@
 # @Author: yangbo
 # @Date:   2015-08-04 11:48:39
 # @Last Modified by:   Yang Bo
-# @Last Modified time: 2015-08-04 14:47:19
+# @Last Modified time: 2015-08-07 22:57:30
 
 import os
 import numpy
@@ -79,12 +79,16 @@ def printTime():
 def screen(screenName=None, path='imgs'):
     if screenName is None:
         screenName = time.strftime('%m_%d_%H_%M_%S.png', time.gmtime())
-    screenPath = '%s/%s.png' % (path, screenName)
+    screenPath = '%s/%s' % (path, screenName)
     DEVICE.screenshot(screenPath)
     return Image.open(screenPath), screenPath
 
 
-if __name__ == '__main__':
+def run():
     while True:
         action()
         time.sleep(3)
+
+
+if __name__ == '__main__':
+    run()
