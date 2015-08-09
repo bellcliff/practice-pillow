@@ -71,14 +71,13 @@ def action():
 
 
 def printTime():
-    import time
     millis = int(round(time.time() * 1000))
     print millis
 
 
 def screen(screenName=None, path='imgs'):
     if screenName is None:
-        screenName = time.strftime('%m%d %H%M%S.png', time.localtime())
+        screenName = time.strftime('%m%d-%H%M%S.png', time.localtime())
     screenPath = '%s/%s' % (path, screenName)
     DEVICE.screenshot(screenPath)
     return Image.open(screenPath), screenPath
