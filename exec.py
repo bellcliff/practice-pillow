@@ -78,7 +78,7 @@ def printTime():
 
 def screen(screenName=None, path='imgs'):
     if screenName is None:
-        screenName = time.strftime('%m_%d_%H_%M_%S.png', time.localtime())
+        screenName = time.strftime('%m%d %H%M%S.png', time.localtime())
     screenPath = '%s/%s' % (path, screenName)
     DEVICE.screenshot(screenPath)
     return Image.open(screenPath), screenPath
