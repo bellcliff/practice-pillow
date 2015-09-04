@@ -11,8 +11,8 @@ import time
 from PIL import Image
 from uiautomator import Device
 
-
-DEVICE = Device('192.168.57.101:5555')
+DEVID = os.environ.get('DEVID', '1')
+DEVICE = Device('192.168.57.10%s:5555' % DEVID)
 RECTS = {
     'back': (90, 430, 230, 470),
     'item': (170, 560, 315, 600),
